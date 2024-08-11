@@ -33,6 +33,7 @@ class Program
         }
 
         // IMDB Puanı 4 ile 9 Arasında Olan Filmleri Listele
+        //Burada Where Yöntemini Kullanarak 4 ile 9 arası olan flimleri alıyoruz ve geçici olarak filteredMovies aktarıyoruz
         Console.WriteLine("\nIMDB Puanı 4 ile 9 Arasında Olan Filmler:");
         var filteredMovies = movieList.Where(m => m.Point >= 4 && m.Point <= 9);
         foreach (var movie in filteredMovies)
@@ -41,6 +42,9 @@ class Program
         }
 
         // İsmi 'A' ile Başlayan Filmler ve IMDB Puanları
+        //Where Yöntemini Kullanarak A ile başlayan flimleri filtreliyoruz
+        //, StringComparison.OrdinalIgnoreCase büyük Küçük harf duyarlılığını kaldırır
+        //StartsWith Başlangıcı kontrol etmek için Kullandığımız stringler için bir methoddur
         Console.WriteLine("\nİsmi 'A' ile Başlayan Filmler ve IMDB Puanları:");
         var moviesStartingWithA = movieList.Where(m => m.Name.StartsWith("A", StringComparison.OrdinalIgnoreCase));
         foreach (var movie in moviesStartingWithA)
